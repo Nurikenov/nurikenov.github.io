@@ -36,3 +36,18 @@ nav a {
 nav ul {
     display: flex;
 }
+
+.tech ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.tech li {
+    display: block;
+    width: 64px;
+    height: 64px;
+    background: #000;
+    color: wheat;
+    margin: 16px;
+}
