@@ -1,4 +1,0 @@
-ErrorDocument 404 /404.html
-User-agent: *
-Disallow: /cgi-bin/
-Disallow: /about/
