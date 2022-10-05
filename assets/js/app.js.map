@@ -1,1 +1,0 @@
-{"version":3,"file":"app.js","sources":["src/assets/js/app.js"],"sourcesContent":["// Remove `no-js` class\ndocument.documentElement.classList.remove('no-js')\n\n// Add your codes here\n"],"names":["document","documentElement","classList","remove"],"mappings":";;;CAAA;CACAA,QAAQ,CAACC,eAAT,CAAyBC,SAAzB,CAAmCC,MAAnC,CAA0C,OAA1C;;;;;;"}
