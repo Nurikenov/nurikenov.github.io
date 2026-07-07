@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Конструктор лендинга</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+  :root{
+    --bg: var(--tg-theme-bg-color, #17212b);
+    --sec: var(--tg-theme-secondary-bg-color, #232e3c);
+    --text: var(--tg-theme-text-color, #fff);
+    --hint: var(--tg-theme-hint-color, #8a9aa9);
+    --accent: var(--tg-theme-button-color, #5ea6ff);
+    --accent-text: var(--tg-theme-button-text-color, #fff);
+    --link: var(--tg-theme-link-color, #6ab3f3);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;padding:16px 16px 40px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg);color:var(--text);
+    -webkit-tap-highlight-color:transparent;
+  }
+  h1{font-size:20px;margin:4px 0 2px}
+  .sub{color:var(--hint);font-size:13px;margin:0 0 18px}
+  label{display:block;font-size:13px;color:var(--hint);margin:16px 0 7px;font-weight:600;
+    text-transform:uppercase;letter-spacing:.4px}
+  textarea,select,input[type=text]{
+    width:100%;padding:13px 14px;border-radius:12px;border:1px solid transparent;
+    background:var(--sec);color:var(--text);font-size:16px;outline:none;
+  }
+  textarea{min-height:92px;resize:vertical;font-family:inherit}
+  select{appearance:none;-webkit-appearance:none}
+  textarea:focus,select:focus,input:focus{border-color:var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{
+    padding:9px 14px;border-radius:20px;background:var(--sec);color:var(--text);
+    font-size:14px;cursor:pointer;user-select:none;border:1.5px solid transparent;
+    transition:.12s;
+  }
+  .chip.on{background:var(--accent);color:var(--accent-text);border-color:var(--accent)}
+  .row{display:flex;align-items:center;gap:10px;margin-top:16px}
+  .row input[type=color]{width:44px;height:36px;padding:0;border:none;border-radius:8px;background:none}
+  .switch{display:flex;align-items:center;justify-content:space-between;
+    background:var(--sec);padding:13px 14px;border-radius:12px;margin-top:16px;font-size:15px}
+  .switch input{width:20px;height:20px;accent-color:var(--accent)}
+  .hintline{font-size:12px;color:var(--hint);margin-top:6px}
+</style>
+</head>
+<body>
+  <h1>🎨 Конструктор лендинга</h1>
+  <p class="sub">Заполни — модель на сервере соберёт страницу и пришлёт превью в чат.</p>
+
+  <label>Описание / тема бизнеса</label>
+  <textarea id="desc" placeholder="Например: кофейня «Дар» в центре города, уютная атмосфера, авторский кофе и десерты, запись на дегустацию"></textarea>
+
+  <label>Стиль оформления</label>
+  <select id="style">
+    <option value="">— на усмотрение модели —</option>
+    <option value="min">◽ Минимализм</option>
+    <option value="dark">🌑 Тёмный</option>
+    <option value="bright">🌈 Яркий</option>
+    <option value="corp">🏢 Корпоративный</option>
+    <option value="premium">👑 Премиум</option>
+  </select>
+
+  <label>Секции на странице</label>
+  <div class="chips" id="sections"></div>
+
+  <label>Язык контента</label>
+  <select id="tone">
+    <option value="русский">Русский</option>
+    <option value="English">English</option>
+    <option value="қазақша">Қазақша</option>
+  </select>
+
+  <div class="row">
+    <input type="checkbox" id="useColor" style="width:20px;height:20px;accent-color:var(--accent)">
+    <label style="margin:0;text-transform:none;letter-spacing:0;font-weight:400;color:var(--text)">Задать акцентный цвет</label>
+    <input type="color" id="color" value="#5ea6ff" disabled>
+  </div>
+
+  <div class="switch">
+    <span>Новый лендинг с нуля</span>
+    <input type="checkbox" id="fresh">
+  </div>
+  <div class="hintline">Выключено — модель дорабатывает текущий лендинг.</div>
+
+<script>
+  const tg = window.Telegram.WebApp;
+  tg.ready(); tg.expand();
+  try { tg.setHeaderColor('secondary_bg_color'); } catch(e){}
+
+  const SECTIONS = ["Первый экран (hero)","О нас","Услуги / Меню","Преимущества",
+    "Отзывы","Галерея","Цены / Тарифы","Форма заявки","Контакты","FAQ"];
+  const box = document.getElementById('sections');
+  SECTIONS.forEach(s=>{
+    const el=document.createElement('div');
+    el.className='chip';el.textContent=s;
+    el.onclick=()=>el.classList.toggle('on');
+    box.appendChild(el);
+  });
+
+  const useColor=document.getElementById('useColor');
+  const color=document.getElementById('color');
+  useColor.onchange=()=>{color.disabled=!useColor.checked;};
+
+  tg.MainButton.setText('✨ Сгенерировать лендинг');
+  tg.MainButton.show();
+  tg.MainButton.onClick(()=>{
+    const desc=document.getElementById('desc').value.trim();
+    if(!desc){ tg.showAlert('Опиши хотя бы тему лендинга.'); return; }
+    const sections=[...box.querySelectorAll('.chip.on')].map(c=>c.textContent);
+    const data={
+      desc:desc,
+      style:document.getElementById('style').value,
+      sections:sections,
+      tone:document.getElementById('tone').value,
+      color:useColor.checked?color.value:"",
+      fresh:document.getElementById('fresh').checked
+    };
+    tg.sendData(JSON.stringify(data));
+    tg.close();
+  });
+</script>
+</body>
+</html>
