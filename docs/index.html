@@ -3,166 +3,213 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Фитнес-Центр "Сила и Красота"</title>
-  <meta name="description" content="Фитнес-центр с современным оборудованием и профессиональным тренерским составом. Забудьте о стрессе и начните жить активно!">
-  <meta property="og:title" content="Фитнес-Центр "Сила и Красота"">
-  <meta property="og:description" content="Фитнес-центр с современным оборудованием и профессиональным тренерским составом. Забудьте о стрессе и начните жить активно!">
+  <title>Сондай — Мини-игра</title>
+  <meta name="description" content="Играйте в Сондай — увлекательную мини-игру с простыми правилами и ярким дизайном.">
+  <meta property="og:title" content="Сондай — Мини-игра">
+  <meta property="og:description" content="Играйте в Сондай — увлекательную мини-игру с простыми правилами и ярким дизайном.">
   <meta property="og:type" content="website">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(145deg, #f4f4f4, #e0e0e0);
-      color: #333;
     }
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 20px 10px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-    section {
-      margin-bottom: 40px;
-    }
-    h2 {
-      color: #2c3e50;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 5px;
-      margin-bottom: 15px;
-    }
-    .features {
+
+    body {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: #fff;
+      min-height: 100vh;
+      padding: 20px;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
-    .feature {
-      flex: 1 1 280px;
-      background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      border-radius: 8px;
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      margin-top: 20px;
     }
-    .feature h3 {
-      color: #3498db;
+
+    h1 {
+      font-size: 2.5rem;
       margin-bottom: 10px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
-    .cta {
-      text-align: center;
-      background: #3498db;
+
+    .game-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #f0f0f0;
+    }
+
+    .game-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 15px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+
+    .game-canvas {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
       color: white;
-      padding: 40px 20px;
-      border-radius: 10px;
+      text-shadow: 0 0 10px #fff;
     }
-    .cta h2 {
-      margin-bottom: 20px;
+
+    .controls {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
     }
-    .cta button {
-      background: #2c3e50;
+
+    button {
+      background: linear-gradient(45deg, #ff8a00, #e52e71);
       color: white;
-      padding: 12px 25px;
       border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      padding: 12px 25px;
       font-size: 1rem;
-      transition: background 0.3s;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
-    .cta button:hover {
-      background: #1a252f;
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
-    footer {
-      text-align: center;
+
+    .rules {
+      margin-top: 30px;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.15);
       padding: 20px;
-      background: #2c3e50;
-      color: white;
-      font-size: 0.9rem;
+      border-radius: 15px;
     }
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
+
+    .rules h2 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .rules ul {
+      padding-left: 20px;
+    }
+
+    .rules li {
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
       }
-      .features {
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      .game-container {
+        height: 200px;
+      }
+      
+      .controls {
         flex-direction: column;
-      }
-      .feature {
-        flex: 1 1 100%;
+        align-items: center;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Фитнес-Центр "Сила и Красота"</h1>
-    <nav>
-      <a href="#features">Преимущества</a>
-      <a href="#services">Услуги</a>
-      <a href="#contact">Контакты</a>
-    </nav>
-  </header>
   <div class="container">
-    <section id="introduction">
-      <h2>Добро пожаловать в мир фитнеса!</h2>
-      <p>Здесь вы найдете всё необходимое для достижения ваших целей в фитнесе. Современное оборудование, опытные тренеры и уютная атмосфера — всё это делает нас идеальным местом для занятий.</p>
-    </section>
-    <section id="features">
-      <h2>Почему выбирают нас?</h2>
-      <div class="features">
-        <div class="feature">
-          <h3>Современное оборудование</h3>
-          <p>В нашем центре представлены самые передовые тренажеры, подходящие как для новичков, так и для продвинутых спортсменов.</p>
-        </div>
-        <div class="feature">
-          <h3>Профессиональные тренеры</h3>
-          <p>Наши тренеры помогут составить индивидуальный план тренировок и поддержат на каждом этапе.</p>
-        </div>
-        <div class="feature">
-          <h3>Уютные залы и удобное расписание</h3>
-          <p>Занятия возможны в любое удобное время, а просторные залы создают комфортную атмосферу.</p>
-        </div>
+    <h1>Сондай</h1>
+    <p class="game-description">Увлекательная мини-игра с простыми правилами. Просто нажмите кнопку и начинайте играть!</p>
+
+    <div class="game-container">
+      <div class="game-canvas" id="gameCanvas">
+        🎮
       </div>
-    </section>
-    <section id="services">
-      <h2>Наше предложение</h2>
-      <p>Мы предлагаем групповые занятия, индивидуальные тренировки, программы по снижению веса и набору мышечной массы. Также доступны курсы йоги и йога-йин.</p>
-    </section>
-    <section class="cta">
-      <h2>Начните тренироваться уже сегодня!</h2>
-      <button onclick="alert('Запрос на регистрацию отправлен!')">Забронировать занятие</button>
-    </section>
-    <section id="contact">
-      <h2>Контакты</h2>
-      <p>Адрес: ул. Спортивная, 15</p>
-      <p>Телефон: +7 (123) 456-78-90</p>
-      <p>Email: info@fitcenter.ru</p>
-    </section>
+    </div>
+
+    <div class="controls">
+      <button onclick="startGame()">Начать игру</button>
+      <button onclick="showRules()">Правила игры</button>
+    </div>
+
+    <div class="rules" id="rulesSection" style="display: none;">
+      <h2>Правила Сондая</h2>
+      <ul>
+        <li>Игра начинается с нажатия кнопки "Начать игру"</li>
+        <li>Ваша задача — собирать как можно больше очков за время</li>
+        <li>Используйте стрелки для управления персонажем</li>
+        <li>Избегайте препятствий и собирайте бонусы</li>
+        <li>Каждый уровень увеличивает скорость игры</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      © 2024 Сондай — Мини-игра
+    </div>
   </div>
-  <footer>
-    &copy; 2025 Фитнес-Центр "Сила и Красота". Все права защищены.
-  </footer>
+
   <script>
-    // Пример скрипта для кнопки
-    document.querySelector('.cta button').addEventListener('click', function() {
-      alert('Спасибо за интерес к нашему фитнес-центру!');
-    });
+    function startGame() {
+      const canvas = document.getElementById('gameCanvas');
+      canvas.innerHTML = '🎮';
+      canvas.style.animation = 'pulse 0.5s infinite';
+      
+      setTimeout(() => {
+        canvas.innerHTML = '🎮';
+        canvas.style.animation = '';
+      }, 1000);
+    }
+
+    function showRules() {
+      const rulesSection = document.getElementById('rulesSection');
+      if (rulesSection.style.display === 'none') {
+        rulesSection.style.display = 'block';
+      } else {
+        rulesSection.style.display = 'none';
+      }
+    }
+
+    // Анимация для игрового поля
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+      }
+    `;
+    document.head.appendChild(style);
   </script>
-<!-- build:d64d99cb -->
+<!-- build:82632c47 -->
 </body>
 </html>
