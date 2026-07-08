@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Аптека Здоровье — Лучшие лекарства и услуги</title>
+  <meta name="description" content="Аптека Здоровье — ваш надежный источник лекарственных средств и медицинских услуг. Удобная покупка, профессиональная консультация и качественное обслуживание.">
+  <meta property="og:title" content="Аптека Здоровье — Лучшие лекарства и услуги">
+  <meta property="og:description" content="Удобная покупка лекарственных средств и профессиональная консультация в аптеке Здоровье.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aptka-zdorovie.ru">
+  <meta property="og:image" content="https://aptka-zdorovie.ru/images/og-image.jpg">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #005a9c;
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 1.5rem;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #005a9c, #007bba);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #ffd700;
+      color: #005a9c;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #005a9c;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .service-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      width: calc(33% - 2rem);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #005a9c;
+    }
+
+    .service-card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .feature {
+      flex: 1 1 40%;
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature h3 {
+      color: #005a9c;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact {
+      background-color: #005a9c;
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact p {
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .service-card,
+      .feature {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">Аптека Здоровье</div>
+      <nav>
+        <ul>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#features">Преимущества</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Ваша здоровая жизнь — в Аптеке Здоровье</h1>
+    <p>Мы предлагаем качественные лекарства, профессиональную консультацию и удобные условия для покупки.</p>
+    <a href="#contact" class="btn">Заказать онлайн</a>
+  </section>
+
+  <div class="container">
+    <h2 id="services" class="section-title">Наши услуги</h2>
+    <div class="services">
+      <div class="service-card">
+        <div class="service-icon">💊</div>
+        <h3>Продажа лекарств</h3>
+        <p>Широкий ассортимент медикаментов по доступным ценам.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚕️</div>
+        <h3>Консультации</h3>
+        <p>Профессиональные консультации с фармацевтами и врачами.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📦</div>
+        <h3>Доставка</h3>
+        <p>Быстрая доставка по всей территории города.</p>
+      </div>
+    </div>
+
+    <h2 id="features" class="section-title">Почему выбирают нас?</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Качественные препараты</h3>
+        <p>Мы работаем только с проверенными производителями и гарантируем качество всех лекарств.</p>
+      </div>
+      <div class="feature">
+        <h3>Удобное расположение</h3>
+        <p>Аптека находится в центре города, рядом с метро и транспортной развязкой.</p>
+      </div>
+      <div class="feature">
+        <h3>Круглосуточная работа</h3>
+        <p>Наши сотрудники всегда готовы оказать помощь в любое время суток.</p>
+      </div>
+    </div>
+
+    <section id="contact" class="contact">
+      <h2>Свяжитесь с нами</h2>
+      <p>У вас есть вопросы? Мы всегда рады помочь!</p>
+      <a href="tel:+71234567890" class="btn">Позвонить нам</a>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 Аптека Здоровье. Все права защищены.</p>
+  </footer>
+<!-- build:889fc9c2 -->
+</body>
+</html>
