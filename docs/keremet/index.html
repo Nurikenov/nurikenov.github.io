@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Пансионат Керемет — Бронирование домиков возле Алаколь</title>
+    <meta name="description" content="Пансионат Керемет предлагает комфортные домики возле Алаколь. Уютное место для отдыха, семейного отдыха и путешествий. Забронируйте ваш отдых уже сегодня!">
+    <meta property="og:title" content="Пансионат Керемет — Бронирование домиков возле Алаколь">
+    <meta property="og:description" content="Уютные домики возле Алаколь. Отдыхайте в тишине и природной красоте. Забронируйте ваш отдых уже сегодня!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1566073773546-68e201a84b1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://keremet-pensionat.ru">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1566073773546-68e201a84b1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff6b00;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: #e55a00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #0d47a1;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #1a73e8;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: #0d47a1;
+        }
+
+        .rooms {
+            background: #e3f2fd;
+        }
+
+        .room-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .room-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .room-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .room-image {
+            height: 250px;
+            background: linear-gradient(45deg, #42a5f5, #1976d2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .room-info {
+            padding: 25px;
+        }
+
+        .room-info h3 {
+            margin-bottom: 10px;
+            color: #0d47a1;
+        }
+
+        .room-info p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff6b00;
+            margin-bottom: 20px;
+        }
+
+        .booking-form {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #0d47a1;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .testimonials {
+            background: #f1f8e9;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #42a5f5, #1976d2);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+            color: #0d47a1;
+        }
+
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: #0d47a1;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-column p,
+        .footer-column a {
+            color: #e0f7fa;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .footer-column a:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav a {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                margin: 0 5px;
+                font-size: 0.9rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Пансионат Керемет</div>
+                <nav>
+                    <a href="#about">О нас</a>
+                    <a href="#rooms">Домики</a>
+                    <a href="#booking">Бронирование</a>
+                    <a href="#contact">Контакты</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Уютные домики возле Алаколь</h1>
+            <p>Пансионат Керемет — идеальное место для отдыха в тишине и природной красоте. Уютные домики, комфортное размещение и живописная природа Алакольской котловины.</p>
+            <a href="#booking" class="btn">Забронировать домик</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>О пансионате Керемет</h2>
+                <p>Уникальное место для отдыха в живописной местности возле Алакольской котловины</p>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Природная красота</h3>
+                    <p>Расположение в живописной местности возле Алакольской котловины с живописными пейзажами.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏡</div>
+                    <h3>Уютные домики</h3>
+                    <p>Комфортные и уютные домики с современной инфраструктурой для комфортного отдыха.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Семейный отдых</h3>
+                    <p>Идеальное место для семейного отдыха и проведения времени в тишине и спокойствии.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rooms" id="rooms">
+        <div class="container">
+            <div class="section-title">
+                <h2>Домики для проживания</h2>
+                <p>Выберите идеальный домик для вашего отдыха</p>
+            </div>
+            <div class="room-grid">
+                <div class="room-card">
+                    <div class="room-image">🏠</div>
+                    <div class="room-info">
+                        <h3>Семейный домик</h3>
+                        <p>4 человека, 2 спальни, кухня, ванная комната</p>
+                        <div class="price">от 1500 ₽/сутки</div>
+                        <a href="#booking" class="btn">Забронировать</a>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <div class="room-image">🏘️</div>
+                    <div class="room-info">
+                        <h3>Домик для пары</h3>
+                        <p>2 человека, 1 спальня, кухня, ванная комната</p>
+                        <div class="price">от 900 ₽/сутки</div>
+                        <a href="#booking" class="btn">Забронировать</a>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <div class="room-image">🏘️</div>
+                    <div class="room-info">
+                        <h3>Домик с террасой</h3>
+                        <p>6 человек, 3 спальни, кухня, ванная комната, терраса</p>
+                        <div class="price">от 2500 ₽/сутки</div>
+                        <a href="#booking" class="btn">Забронировать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking">
+        <div class="container">
+            <div class="section-title">
+                <h2>Бронирование домика</h2>
+                <p>Забронируйте ваш отдых уже сегодня</p>
+            </div>
+            <div class="booking-form">
+                <form id="reservationForm">
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkin">Дата заезда</label>
+                        <input type="date" id="checkin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout">Дата выезда</label>
+                        <input type="date" id="checkout" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="room">Выберите домик</label>
+                        <select id="room" required>
+                            <option value="">Выберите вариант</option>
+                            <option value="Семейный домик">Семейный домик (4 человека)</option>
+                            <option value="Домик для пары">Домик для пары (2 человека)</option>
+                            <option value="Домик с террасой">Домик с террасой (6 человек)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">Забронировать</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="reviews">
+        <div class="container">
+            <div class="section-title">
+                <h2>Отзывы наших гостей</h2>
+                <p>Что говорят наши клиенты о проживании в пансионате Керемет</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Отличное место для отдыха! Уютные домики, чистота и спокойствие. Всё как нужно для семейного отдыха."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">А</div>
+                        <div class="author-info">
+                            <h4>Анна Петрова</h4>
+                            <p>Семейный отдых</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Отличное расположение. Всё, что нужно для комфортного отдыха: уютные домики, чистота, хорошее обслуживание."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">М</div>
+                        <div class="author-info">
+                            <h4>Михаил Сидоров</h4>
+                            <p>Отдых с семьёй</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Прекрасное место для расслабления. Уютные домики, живописная природа и отличное обслуживание. Рекомендую!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">С</div>
+                        <div class="author-info">
+                            <h4>Светлана Иванова</h4>
+                            <p>Отдых для пары</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Пансионат Керемет</h3>
+                    <p>Уютные домики возле Алакольской котловины. Идеальное место для отдыха в природе.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <p>📍 Ул. Природная, д. 15</p>
+                    <p>📞 +7 (999) 123-45-67</p>
+                    <p>✉️ info@keremet-pensionat.ru</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Часы работы</h3>
+                    <p>Пн-Вс: 8:00 - 20:00</p>
+                    <p>Бронирование: круглосуточно</p>
+                </div>
+            </div>
+            <p>&copy; 2023 Пансионат Керемет. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Обработка формы бронирования
+            const form = document.getElementById('reservationForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Получаем значения формы
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const phone = document.getElementById('phone').value;
+                    const checkin = document.getElementById('checkin').value;
+                    const checkout = document.getElementById('checkout').value;
+                    const room = document.getElementById('room').value;
+                    
+                    // Показываем сообщение об успешной отправке
+                    alert(`Спасибо за бронирование, ${name}!\nВаша заявка на бронирование домика "${room}" с ${checkin} по ${checkout} отправлена. Мы свяжемся с вами по телефону ${phone} или email ${email}`);
+                    
+                    // Сбрасываем форму
+                    form.reset();
+                });
+            }
+            
+            // Плавная прокрутка по якорям
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+<!-- build:a99eeddb -->
+</body>
+</html>
