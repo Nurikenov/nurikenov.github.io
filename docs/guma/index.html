@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Сестрёнка Гума — замечательная девочка</title>
+  <meta name="description" content="Лендинг о замечательной сестрёнке Гуме. Любимая, умная, заботливая и весёлая.">
+  <meta property="og:title" content="Сестрёнка Гума — замечательная девочка">
+  <meta property="og:description" content="Любимая, умная, заботливая и весёлая сестрёнка Гума">
+  <meta property="og:image" content="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwIDIwIiBmaWxsPSIjRkZGIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIi8+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkdvbWUgQmVhdXRpZnVsPC90ZXh0Pjwvc3ZnPg==">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #7f8c8d;
+      margin-bottom: 2rem;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 2rem 0;
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.12);
+    }
+
+    .feature-card h3 {
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      color: #7f8c8d;
+    }
+
+    .quote {
+      font-style: italic;
+      text-align: center;
+      padding: 1.5rem;
+      background: #f8f9fa;
+      border-radius: 12px;
+      margin: 2rem 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: #7f8c8d;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Сестрёнка Гума</h1>
+      <p class="subtitle">Замечательная девочка с добрым сердцем</p>
+    </header>
+
+    <main>
+      <div class="profile">
+        <div class="avatar">👧</div>
+        <h2>Гума — наша любимая сестрёнка</h2>
+      </div>
+
+      <div class="features">
+        <div class="feature-card">
+          <h3>Умная и любознательная</h3>
+          <p>Гума всегда интересуется новыми вещами, задаёт вопросы и с радостью учится чему-то новому.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Заботливая и добрая</h3>
+          <p>Она всегда заботится о других, помогает друзьям и делает добрые поступки.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Весёлая и жизнерадостная</h3>
+          <p>Гума смеётся и радуется каждому дню, поднимая настроение всем вокруг.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Творческая и активная</h3>
+          <p>Она любит рисовать, играть в игры и проявлять творчество в каждом деле.</p>
+        </div>
+      </div>
+
+      <div class="quote">
+        Гума — это не просто сестрёнка, а настоящая принцесса в сердце!
+      </div>
+    </main>
+
+    <footer>
+      <p>Создано с любовью для нашей замечательной сестрёнки Гумы</p>
+    </footer>
+  </div>
+<!-- build:f10a6083 -->
+</body>
+</html>
