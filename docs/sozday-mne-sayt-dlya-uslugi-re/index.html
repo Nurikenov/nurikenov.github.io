@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Акрам - Решетки для окон | Профессиональные решения</title>
+  <meta name="description" content="Компания Акрам предлагает высококачественные решетки для окон. Установка, ремонт и обслуживание по выгодным ценам.">
+  <meta property="og:title" content="Акрам - Решетки для окон">
+  <meta property="og:description" content="Профессиональные решения для защиты окон от воров и пыли. Установка и ремонт по выгодным ценам.">
+  <meta property="og:image" content="https://placehold.co/600x400?text=Акрам+Решетки">
+  <style>
+    :root {
+      --primary: #2c5aa0;
+      --secondary: #ff9d00;
+      --light: #f8f9fa;
+      --dark: #333;
+      --accent: #4caf50;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 2rem;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: var(--secondary);
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      color: var(--primary);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .feature-card h3 {
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .price-table {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .price-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .price-card h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--accent);
+      margin: 1rem 0;
+    }
+
+    .features-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #1e4178;
+      transform: scale(1.05);
+    }
+
+    .contact-section {
+      background-color: var(--light);
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    footer {
+      background-color: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+      }
+      
+      nav ul {
+        margin-top: 1rem;
+      }
+      
+      nav ul li {
+        margin: 0 0.5rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo">Акрам</div>
+      <nav>
+        <ul>
+          <li><a href="#features">Преимущества</a></li>
+          <li><a href="#prices">Цены</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="features">
+    <div class="container">
+      <h2 class="section-title">Наши преимущества</h2>
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Высокая защита</h3>
+          <p>Надежные решетки обеспечивают максимальную безопасность вашего дома и офиса.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔧</div>
+          <h3>Профессиональная установка</h3>
+          <p>Опытные мастера устанавливают решетки с гарантией качества и долговечности.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Эстетичный дизайн</h3>
+          <p>Современные решетки подчеркивают красоту окон и не портят внешний вид помещения.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prices" style="background-color: #f0f8ff;">
+    <div class="container">
+      <h2 class="section-title">Наши цены</h2>
+      <div class="price-table">
+        <div class="price-card">
+          <h3>Стандартная решетка</h3>
+          <p>Для окон стандартного размера</p>
+          <div class="price">от 1500 ₽</div>
+          <ul class="features-list">
+            <li>Материал: нержавеющая сталь</li>
+            <li>Установка в комплекте</li>
+            <li>Гарантия 5 лет</li>
+          </ul>
+          <a href="#contact" class="btn">Заказать</a>
+        </div>
+        <div class="price-card">
+          <h3>Премиум решетка</h3>
+          <p>Для больших окон и балконов</p>
+          <div class="price">от 2500 ₽</div>
+          <ul class="features-list">
+            <li>Усиленная конструкция</li>
+            <li>Система замка с ключом</li>
+            <li>Дополнительные опции</li>
+          </ul>
+          <a href="#contact" class="btn">Заказать</a>
+        </div>
+        <div class="price-card">
+          <h3>Ремонт и обслуживание</h3>
+          <p>Услуги по ремонту решеток</p>
+          <div class="price">от 800 ₽</div>
+          <ul class="features-list">
+            <li>Быстрый ремонт</li>
+            <li>Замена деталей</li>
+            <li>Консультация специалиста</li>
+          </ul>
+          <a href="#contact" class="btn">Заказать</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title">Связаться с нами</h2>
+      <div style="display: flex; justify-content: center;">
+        <form style="width: 100%; max-width: 500px;">
+          <div class="form-group">
+            <input type="text" placeholder="Ваше имя" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Номер телефона">
+          </div>
+          <div class="form-group">
+            <textarea rows="4" placeholder="Опишите ваш проект"></textarea>
+          </div>
+          <button type="submit" class="btn">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Акрам. Все права защищены.</p>
+      <p>Контакты: +7 (XXX) XXX-XX-XX | info@akram.ru</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Плавная прокрутка по якорям
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Обработка формы
+      const form = document.querySelector('form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert('Спасибо за ваш запрос! Мы свяжемся с вами в ближайшее время.');
+          form.reset();
+        });
+      }
+    });
+  </script>
+<!-- build:858ea2ee -->
+</body>
+</html>
